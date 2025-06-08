@@ -1,0 +1,28 @@
+{
+  "name": "techwave-ecommerce",
+  "version": "1.0.0",
+  "description": "Complete e-commerce system for TechWave tech store",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "setup-db": "node scripts/setup-database.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.6.5",
+    "express-session": "^1.17.3",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express-validator": "^7.0.1",
+    "nodemailer": "^6.9.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": ["ecommerce", "nodejs", "mysql", "express"],
+  "author": "TechWave",
+  "license": "MIT"
+}

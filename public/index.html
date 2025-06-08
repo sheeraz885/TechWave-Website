@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechWave - Tech Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Clicker+Script&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&family=Ysabeau+SC:wght@1..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+   <!-- Shipping Banner -->
+   <div class="shipping-banner">
+    FREE 2-DAY SHIPPING FOR ORDERS OF $50 OR MORE
+</div>
+
+<!-- Navigation Bar -->
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo">TECHWAVE</div>
+        <ul class="nav-links">
+            <li><a href="/" class="active">HOME</a></li>
+            <li><a href="/shop">SHOP</a></li>
+            <li><a href="#sale">SALE</a></li>
+            <li><a href="#help">HELP</a></li>
+        </ul>
+        <div class="nav-icons">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+                <button onclick="searchProducts()" class="search-btn">🔍</button>
+            </div>
+            <a href="#" class="login" id="loginLink">
+                <svg data-bbox="0 0 50 50" data-type="shape" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><g><path d="M25 48.077c-5.924 0-11.31-2.252-15.396-5.921 2.254-5.362 7.492-8.267 15.373-8.267 7.889 0 13.139 3.044 15.408 8.418-4.084 3.659-9.471 5.77-15.385 5.77m.278-35.3c4.927 0 8.611 3.812 8.611 8.878 0 5.21-3.875 9.456-8.611 9.456s-8.611-4.246-8.611-9.456c0-5.066 3.684-8.878 8.611-8.878M25 0C11.193 0 0 11.193 0 25c0 .915.056 1.816.152 2.705.032.295.091.581.133.873.085.589.173 1.176.298 1.751.073.338.169.665.256.997.135.515.273 1.027.439 1.529.114.342.243.675.37 1.01.18.476.369.945.577 1.406.149.331.308.657.472.98.225.446.463.883.714 1.313.182.312.365.619.56.922.272.423.56.832.856 1.237.207.284.41.568.629.841.325.408.671.796 1.02 1.182.22.244.432.494.662.728.405.415.833.801 1.265 1.186.173.154.329.325.507.475l.004-.011A24.886 24.886 0 0 0 25 50a24.881 24.881 0 0 0 16.069-5.861.126.126 0 0 1 .003.01c.172-.144.324-.309.49-.458.442-.392.88-.787 1.293-1.209.228-.232.437-.479.655-.72.352-.389.701-.78 1.028-1.191.218-.272.421-.556.627-.838.297-.405.587-.816.859-1.24a26.104 26.104 0 0 0 1.748-3.216c.208-.461.398-.93.579-1.406.127-.336.256-.669.369-1.012.167-.502.305-1.014.44-1.53.087-.332.183-.659.256-.996.126-.576.214-1.164.299-1.754.042-.292.101-.577.133-.872.095-.89.152-1.791.152-2.707C50 11.193 38.807 0 25 0"></path></g></svg>
+                <span id="loginText">Log In</span>
+            </a>
+            <a href="/cart" class="cart">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" viewBox="0 0 164.9 196.4" preserveAspectRatio="xMinYMax meet" data-hook="svg-icon-9"><text x="84" y="131" dy=".35em" text-anchor="middle" class="uxskpx M846Y_" data-hook="items-count">0</text><path d="M81.9 11.5c-18.8 0-34.1 16-34.1 35.7v18.1h7.8V47.2c0-15.4 11.8-27.9 26.4-27.9 14.5 0 26.4 12.5 26.4 27.9v18.1h6.6V64h1.1V47.2c-.1-19.7-15.4-35.7-34.2-35.7z"></path><path d="M156.9 70.5v118H8v-118h148.9m8-8H0v134h164.9v-134z"></path></svg>
+                <span class="cart-count" id="cartCount">0</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Header Banner -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1 class="fade-in">Quality applications and gadgets</h1>
+            <p class="slide-in">Smart solutions for everyday convenience</p>
+            <button class="shop-now zoom-in" onclick="window.location.href='/shop'">[ SHOP NOW ]</button>
+        </div>
+    </header>
+
+   <!-- Trending Section -->
+<section class="trending">
+    <div class="section-header">
+        <h2 class="fade-in">TRENDING NOW</h2>
+        <a href="/shop" class="discover-more slide-in">[ DISCOVER MORE ]</a>
+    </div>
+    <div class="product-grid" id="featuredProducts">
+        <!-- Featured products will be loaded here -->
+    </div>
+</section>
+
+<div class="banner2">
+    <div class="banner-content banners">
+        <p class="slide-in out">10% off all smart watches with every purchase</p>
+        <p class="slide-in out">Explore limited time offers</p>
+        <button class="shop-now zoom-in" onclick="window.location.href='/shop'">[ SHOP NOW ]</button>
+    </div>
+</div>
+
+<div class="banner3">
+    <div class="contend">
+        <span class="items" onclick="filterByCategory('Speakers & Headphones')">SPEAKERS & HEADPHONES</span>
+        <span class="items" onclick="filterByCategory('Home Appliances')">HOME APPLIANCES</span>
+        <span class="items" onclick="filterByCategory('Smartphones & Watches')">SMART PHONES & WATCHES</span>
+        <span class="items sale" onclick="window.location.href='/shop?featured=true'">SALE</span>
+    </div>
+</div>
+
+<div id="app">
+    <section class="brands-section">
+        <h2>SELECTED BRANDS</h2>
+        <div class="brands-scroll">
+            <div class="brands-container">
+                <div class="brand-logo">Airy Veil</div>
+                <div class="brand-logo">VOLVE</div>
+                <div class="brand-logo">SPAZIO</div>
+                <div class="brand-logo">HERA</div>
+                <div class="brand-logo">PJX</div>
+                <div class="brand-logo">LUNA</div>
+                <div class="brand-logo">NOVA</div>
+                <div class="brand-logo">ZENITH</div>
+                <div class="brand-logo">ECHO</div>
+                <div class="brand-logo">PULSE</div>
+                <!-- Duplicate for seamless loop -->
+                <div class="brand-logo">Airy Veil</div>
+                <div class="brand-logo">VOLVE</div>
+                <div class="brand-logo">SPAZIO</div>
+                <div class="brand-logo">HERA</div>
+                <div class="brand-logo">PJX</div>
+                <div class="brand-logo">LUNA</div>
+                <div class="brand-logo">NOVA</div>
+                <div class="brand-logo">ZENITH</div>
+                <div class="brand-logo">ECHO</div>
+                <div class="brand-logo">PULSE</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="newsletter-section">
+        <h3>SIGN UP TO RECEIVE UPDATES ON NEW PRODUCTS AND SPECIAL OFFERS</h3>
+        <form id="newsletter-form">
+            <div class="form-group">
+                <label for="email">EMAIL *</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="subscribe" required>
+                <label for="subscribe">Yes, subscribe me to your newsletter.</label>
+            </div>
+            <button type="submit">SUBMIT</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-section">
+            <h4>HAVE A QUESTION?</h4>
+            <p>EXPLORE OUR HELP CENTER</p>
+            <button class="view-more">VIEW MORE</button>
+        </div>
+        <div class="footer-section">
+            <h4>SHOP</h4>
+            <ul>
+                <li><a href="/shop">ALL PRODUCTS</a></li>
+                <li><a href="/shop?featured=true">BEST SELLERS</a></li>
+                <li><a href="/shop?featured=true">SALE</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>CONTACT</h4>
+            <p>info@mysite.com</p>
+            <p><br>Malir Karachi </p>
+            <p>123-456-7890</p>
+        </div>
+        <div class="footer-section">
+            <h4>FOLLOW</h4>
+            <ul>
+                <li>INSTAGRAM</li>
+                <li>FACEBOOK</li>
+                <li>TIKTOK</li>
+                <li>YOUTUBE</li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>LEGAL</h4>
+            <ul>
+                <li>TERMS & CONDITIONS</li>
+                <li>PRIVACY POLICY</li>
+                <li>SHIPPING POLICY</li>
+                <li>REFUND POLICY</li>
+                <li>ACCESSIBILITY STATEMENT</li>
+            </ul>
+        </div>
+    </footer>
+    <div class="copyright">
+        © 2024 by Sheeraz Ahmed
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
